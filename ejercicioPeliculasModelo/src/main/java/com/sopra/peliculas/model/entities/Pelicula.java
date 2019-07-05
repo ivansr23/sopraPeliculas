@@ -3,7 +3,13 @@ package com.sopra.peliculas.model.entities;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+
 public class Pelicula {
+	private static ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 	private static AtomicInteger secuencia;
 	private Integer identificador;
 	private String titulo;
@@ -11,7 +17,7 @@ public class Pelicula {
 	private String sipnosis;
 	private String[] listaDeCategorias;
 	static {
-		secuencia = new AtomicInteger();
+		secuencia = context.getBean("secuencia",AtomicInteger.class);
 	}
 	public Pelicula() {
 		super();
