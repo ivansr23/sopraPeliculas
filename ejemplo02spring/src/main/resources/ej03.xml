@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id ="cerveza" class="com.sopra.spring.ejemplo02spring.ej03.Licor" scope="prototype">
+		<property name="nombre" value="Cerveza"></property>
+		<property name="graduacion" value="5º"></property>
+	</bean>
+	<bean id ="vinate" class="com.sopra.spring.ejemplo02spring.ej03.Licor" scope="prototype">
+		<property name="nombre" value="Vino"></property>
+		<property name="graduacion" value="8º"></property>
+	</bean>
+	<bean id="cubataDeCerveza" class="com.sopra.spring.ejemplo02spring.ej03.Cubata" scope="prototype">
+		<property name="volumen" value="33"></property>
+		<property name="licor" ref="cerveza"></property>
+	</bean>
+	<bean id="copaDeVino" class="com.sopra.spring.ejemplo02spring.ej03.Cubata" scope="prototype">
+		<property name="volumen" value="20"></property>
+		<property name="licor" ref="vinate"></property>
+	</bean>
+	<bean id="cañaDeRuben" class="com.sopra.spring.ejemplo02spring.ej03.Cubata" scope="singleton">
+		<property name="volumen" value="50"></property>
+		<property name="licor" ref="cerveza"></property>
+	</bean>
+	
+</beans>

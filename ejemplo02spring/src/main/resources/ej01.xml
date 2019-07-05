@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="elBuzon" class="com.sopra.spring.ejemplo02spring.ej01.BarDeCopas" scope="singleton">
+	<property name="nombre" value= "El Buzon de Mierda"></property>
+	<property name="calidadDeLaBebida" value="Posion X"></property>
+	
+	</bean>
+	
+</beans>
