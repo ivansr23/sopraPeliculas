@@ -3,18 +3,32 @@ package com.sopra.peliculas;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.sopra.peliculas.model.bussines.GestorPeliculas;
 import com.sopra.peliculas.model.entities.Pelicula;
 
 public class Consola {
+	private static ApplicationContext context;
+	static {
+		context= new ClassPathXmlApplicationContext("beans.xml");
+	}
 	public static void main(String[] args) {
 		System.out.println("Peliculas creadas");
 		String[] categorias= {"Miedo","Accion"};
-		GestorPeliculas gestionPeliculas = new GestorPeliculas();
-		List<Pelicula> peliculas = new ArrayList<Pelicula>();
-		List<Pelicula> peliculasMostrar = new ArrayList<Pelicula>();
+		
+		GestorPeliculas gestionPeliculas =context.getBean("gestorPelicula",GestorPeliculas.class);
+		List<Pelicula> peliculas = context.getBean("arraysDePeliculas",ArrayList.class);
+		List<Pelicula> peliculasMostrar = context.getBean("arraysDePeliculas",ArrayList.class);
 		for (int i = 0; i < 10; i++) {
-			Pelicula pelicula= new Pelicula("Batman"+i, "Ni idea", "Murcielago con cara de humano",categorias);
+			Pelicula pelicula= context.getBean("pelicula",Pelicula.class);
+			
+			pelicula.setTitulo("Batman"+i);
+			pelicula.setDirector("Ni idea");
+			pelicula.setSipnosis("Murcielago con cara de humano");
+			pelicula.setListaDeCategorias(categorias);
+			pelicula.setIdentificador(pelicula.getTitulo()+"("+(2008+i)+")");
 			peliculas.add(pelicula);
 		}
 		gestionPeliculas.altaPeliculas(peliculas);
@@ -30,7 +44,7 @@ public class Consola {
 		System.out.println(peliculasMostrar);
 		System.out.println("\n");
 		System.out.println("Peliculas Eliminadas");
-		List<Integer> identificadores=new ArrayList<Integer>();
+		List<String> identificadores=context.getBean("arraysDeIntegers",ArrayList.class);
 		identificadores.add(peliculasMostrar.get(1).getIdentificador());
 		identificadores.add(peliculasMostrar.get(2).getIdentificador());
 		gestionPeliculas.deletePelicula(identificadores);

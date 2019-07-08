@@ -3,33 +3,31 @@ package com.sopra.peliculas.model.entities;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 
 
 
 public class Pelicula {
-	private static ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-	private static AtomicInteger secuencia;
-	private Integer identificador;
+	
+
+	private String identificador;
 	private String titulo;
 	private String director;
 	private String sipnosis;
 	private String[] listaDeCategorias;
-	static {
-		secuencia = context.getBean("secuencia",AtomicInteger.class);
-	}
 	public Pelicula() {
 		super();
 	}
 	public Pelicula(String titulo, String director, String sipnosis, String[] listaDeCategorias) {
 		super();
-		this.identificador = secuencia.incrementAndGet();
 		this.titulo = titulo;
 		this.director = director;
 		this.sipnosis = sipnosis;
 		this.listaDeCategorias = listaDeCategorias;
 	}
+	
+	
+	
 	
 	@Override
 	public int hashCode() {
@@ -54,23 +52,16 @@ public class Pelicula {
 			return false;
 		return true;
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "Pelicula [identificador=" + identificador + ", titulo=" + titulo + ", director=" + director
 				+ ", sipnosis=" + sipnosis + ", listaDeCategorias=" + Arrays.toString(listaDeCategorias) + "]\n";
 	}
-	public static AtomicInteger getSecuencia() {
-		return secuencia;
-	}
-	public static void setSecuencia(AtomicInteger secuencia) {
-		Pelicula.secuencia = secuencia;
-	}
-	public Integer getIdentificador() {
+
+	public String getIdentificador() {
 		return identificador;
 	}
-	public void setIdentificador(Integer id) {
+	public void setIdentificador(String id) {
 		this.identificador = id;
 	}
 	public String getTitulo() {

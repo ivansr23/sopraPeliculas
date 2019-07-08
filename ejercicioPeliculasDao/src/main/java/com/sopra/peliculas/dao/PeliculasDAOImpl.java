@@ -5,9 +5,9 @@ import java.util.Map;
 import com.sopra.peliculas.model.entities.Pelicula;
 
 public class PeliculasDAOImpl implements IPeliculasDAO {
-	private Map<Integer, Pelicula> miMapDePeliculas;
+	private Map<String, Pelicula> miMapDePeliculas;
 	
-	public PeliculasDAOImpl(Map<Integer, Pelicula> miMapDePeliculas) {
+	public PeliculasDAOImpl(Map<String, Pelicula> miMapDePeliculas) {
 		super();
 		this.miMapDePeliculas = miMapDePeliculas;
 	}
@@ -31,7 +31,7 @@ public class PeliculasDAOImpl implements IPeliculasDAO {
 		return miMapDePeliculas.values();
 	}
 
-	public Pelicula readById(Integer id) {
+	public Pelicula readById(String id) {
 		if(miMapDePeliculas.containsKey(id)) {
 			return miMapDePeliculas.get(id);
 		}

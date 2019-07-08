@@ -13,6 +13,6 @@ public interface IPeliculasDAO {
 
 	Collection<Pelicula> read();
 	
-	Pelicula readById(Integer id);
+	Pelicula readById(String id);
 
 }
