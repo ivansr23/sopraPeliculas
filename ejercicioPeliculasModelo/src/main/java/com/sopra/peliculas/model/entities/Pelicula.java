@@ -3,12 +3,16 @@ package com.sopra.peliculas.model.entities;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 
 
+
+@Component(value="pelicula")
+@Scope(value="prototype")
 
 public class Pelicula {
-	
 
 	private String identificador;
 	private String titulo;

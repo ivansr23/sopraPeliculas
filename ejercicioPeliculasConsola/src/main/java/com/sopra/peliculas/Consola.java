@@ -18,11 +18,11 @@ public class Consola {
 		System.out.println("Peliculas creadas");
 		String[] categorias= {"Miedo","Accion"};
 		
-		GestorPeliculas gestionPeliculas =context.getBean("gestorPelicula",GestorPeliculas.class);
+		GestorPeliculas gestionPeliculas =context.getBean(GestorPeliculas.class);
 		List<Pelicula> peliculas = context.getBean("arraysDePeliculas",ArrayList.class);
 		List<Pelicula> peliculasMostrar = context.getBean("arraysDePeliculas",ArrayList.class);
 		for (int i = 0; i < 10; i++) {
-			Pelicula pelicula= context.getBean("pelicula",Pelicula.class);
+			Pelicula pelicula= context.getBean(Pelicula.class);
 			
 			pelicula.setTitulo("Batman"+i);
 			pelicula.setDirector("Ni idea");

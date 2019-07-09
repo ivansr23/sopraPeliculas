@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-	<bean id ="pelicula" class="com.sopra.peliculas.model.entities.Pelicula" scope="prototype">
-	</bean>
+	<context:component-scan base-package="com.sopra.peliculas.model.entities"></context:component-scan>
+	<context:component-scan base-package="com.sopra.peliculas.dao"></context:component-scan>
+	<context:component-scan base-package="com.sopra.peliculas.model.bussines"></context:component-scan>
 	
-	<bean id="mapaDePeliculas" class="java.util.HashMap">
+	<bean id="peliculas" class="java.util.HashMap">
 		<constructor-arg>
 			<map key-type="java.lang.String" value-type="com.sopra.peliculas.model.entities.Pelicula">
 			</map>
 		</constructor-arg>
-	</bean>
-	
-	<bean id="miDaoDePeliculas" class="com.sopra.peliculas.dao.PeliculasDAOImpl">
-		<constructor-arg name="miMapDePeliculas" ref="mapaDePeliculas"></constructor-arg>
-	</bean>
-	
-	<bean id ="gestorPelicula" class="com.sopra.peliculas.model.bussines.GestorPeliculas" scope="singleton">
-		<constructor-arg name="miDaoDePeliculas" ref="miDaoDePeliculas"></constructor-arg>
 	</bean>
 	
 	<bean id = "arraysDePeliculas" class="java.util.ArrayList">

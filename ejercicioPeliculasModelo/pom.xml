@@ -2,5 +2,19 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sopra.peliculas</groupId>
   <artifactId>ejercicioPeliculasModelo</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
+   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <spring.framework.version>5.1.8.RELEASE</spring.framework.version>
+  </properties>
+  <dependencies>
+  	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-context</artifactId>
+	  <version>${spring.framework.version}</version>
+	  <scope>compile</scope>
+	</dependency>
+  </dependencies>
 </project>

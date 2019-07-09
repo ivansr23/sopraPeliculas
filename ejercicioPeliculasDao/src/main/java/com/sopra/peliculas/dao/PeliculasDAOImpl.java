@@ -2,16 +2,18 @@ package com.sopra.peliculas.dao;
 
 import java.util.Collection;
 import java.util.Map;
-import com.sopra.peliculas.model.entities.Pelicula;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
+import com.sopra.peliculas.model.entities.Pelicula;
+@Repository
 public class PeliculasDAOImpl implements IPeliculasDAO {
+	@Autowired
+	@Qualifier("peliculas")
 	private Map<String, Pelicula> miMapDePeliculas;
 	
-	public PeliculasDAOImpl(Map<String, Pelicula> miMapDePeliculas) {
-		super();
-		this.miMapDePeliculas = miMapDePeliculas;
-	}
-
 	public void create(Pelicula pelicula) {
 		miMapDePeliculas.putIfAbsent(pelicula.getIdentificador(),pelicula);
 		
