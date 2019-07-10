@@ -14,25 +14,37 @@ import com.sopra.peliculas.model.entities.Pelicula;
 public class GestorPeliculas {
 	@Autowired
 	private IPeliculasDAO miDaoDePeliculas;
+
+	public IPeliculasDAO getMiDaoDePeliculas() {
+		return miDaoDePeliculas;
+	}
+
+	public void setMiDaoDePeliculas(IPeliculasDAO miDaoDePeliculas) {
+		this.miDaoDePeliculas = miDaoDePeliculas;
+	}
+
 	public void altaPeliculas(List<Pelicula> peliculas) {
-		for(Pelicula pelicula: peliculas) {
+		for (Pelicula pelicula : peliculas) {
+			System.out.println(pelicula);
 			miDaoDePeliculas.create(pelicula);
 		}
-				
+
 	}
+
 	public void updatePeliculas(List<Pelicula> peliculas) {
-		for(Pelicula pelicula: peliculas) {
+		for (Pelicula pelicula : peliculas) {
 			miDaoDePeliculas.update(pelicula);
 		}
 	}
-	public List<Pelicula> listaPeliculas(){
+
+	public List<Pelicula> listaPeliculas() {
 		Collection<Pelicula> read = miDaoDePeliculas.read();
 		return new ArrayList<Pelicula>(read);
 	}
-	
+
 	public void deletePelicula(List<String> identificadores) {
 		Pelicula pelicula;
-		for(String identificador: identificadores) {
+		for (String identificador : identificadores) {
 			pelicula = miDaoDePeliculas.readById(identificador);
 			miDaoDePeliculas.delete(pelicula);
 		}
