@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="objetoSingleton" scope="singleton" class="com.sopra.web.model.entities.Drogas" >
+		<property name="nombre" value="cocacola"></property>
+		<property name="tipo" value="blanda"/>
+	</bean>
+	<bean id="objetoPrototype" scope="prototype" class="com.sopra.web.model.entities.Drogas">
+		<property name="nombre" value="instagram"></property>
+		<property name="tipo" value="blandita"></property>
+	</bean>
+	<bean id="objetoRequest" scope="request" class="com.sopra.web.model.entities.Drogas">
+		<property name="nombre" value="cafe y bollito"></property>
+		<property name="tipo" value="blandurria"></property>
+	</bean>
+	<bean id="obsession" scope="session" class="com.sopra.web.model.entities.Drogas">
+		<property name="nombre" value="pastillas de colores"></property>
+		<property name="tipo" value="dura que es una pasti"></property>
+	</bean>
+</beans>

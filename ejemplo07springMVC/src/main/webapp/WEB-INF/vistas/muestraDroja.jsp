@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%=request.getAttribute("saludo")%>
+Esto es lo que tengo!
+
+Nombre : ${droja.nombre}
+Tipo : ${droja.tipo}
 </body>
 </html>
