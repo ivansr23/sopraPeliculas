@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-${listaDePeliculas}
+${Pelicula}
+<br>
+<a href="/ejemploPeliculasWeb/mvc/muestrameLista">muestrame lista de peliculas</a>
 </body>
 </html>

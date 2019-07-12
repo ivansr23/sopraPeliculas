@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.sopra.peliculas</groupId>
   <artifactId>ejercicioPeliculasNegocio</artifactId>
-  <version>1.2.0</version>
+  <version>2.0.0</version>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -19,7 +19,7 @@
   	<dependency>
   		<groupId>com.sopra.peliculas</groupId>
   		<artifactId>ejercicioPeliculasDao</artifactId>
-  		<version>1.2.0</version>
+  		<version>2.0.0</version>
   		<scope>compile</scope>
   	</dependency>
   </dependencies>

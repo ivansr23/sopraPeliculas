@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-${Pelicula}
-
+${listaPeliculas}
 </body>
 </html>
