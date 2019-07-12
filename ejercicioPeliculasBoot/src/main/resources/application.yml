@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ejercicioPeliculas
+server:
+  port: 8820
