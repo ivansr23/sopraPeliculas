@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: ejemplo10restJpa
+server:
+  port: 8811

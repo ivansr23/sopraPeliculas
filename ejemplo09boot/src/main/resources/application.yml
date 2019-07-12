@@ -1,0 +1,6 @@
+server:
+  port: 8809
+spring:
+  application:
+    name: mi-spring-boot
+mensaje : Mensaje del application.yml
