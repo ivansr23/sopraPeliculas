@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insertar Pelicula</title>
+</head>
+<body>
+<form action="#" th:object="${pelicula}" th:action="@{/peliculas}">
+	<label for="titulo">Titulo</label><input type="text" th:field="*{titulo}" id="titulo"><br>
+	<label for="director">Director</label><input type="text" th:field="*{director}" id="director"><br>
+	<label for="sipnosis">Sipnosis</label><input type="text"  th:field="*{sipnosis}" id="sipnosis"><br>
+	<input type="submit" value="Alta pelicula">
+</form>
+<a href="#" th:href="@{/listadoDePeliculas}">Lista de peliculas</a>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+server:
+  port: 8822
+spring:
+  application:
+    name: mi-config-peliculas
+  cloud:
+    config:
+      enabled: true
+      uri:
+      - http://localhost:8821
+      fail-fast: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8823/eureka

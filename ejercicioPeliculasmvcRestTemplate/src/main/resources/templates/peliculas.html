@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Pelicula</th><th>Titulo</th><th>Director</th><th>Sipnosis</th><th>Categorias</th>
+			</tr>
+		</thead>
+		<tbody th:each="pelicula: ${peliculas}">
+			<td th:text="${pelicula.id}"></td>
+			<td th:text="${pelicula.titulo}"></td>
+			<td th:text="${pelicula.director}"></td>
+			<td th:text="${pelicula.sipnosis}"></td>
+			
+			<td th:each="categoria: ${pelicula.listaDeCategorias}" th:text="${categoria}">
+				
+			</td>
+		</tbody>
+	</table>
+	<a href th:href="@{/}"></a>
+</body>
+</html>
