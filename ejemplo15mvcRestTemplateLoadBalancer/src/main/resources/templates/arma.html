@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" th:object="${arma}" th:action="@{/nuevaArma}">
+	<label for="id">Identificador</label><input type="text" th:field= "*{id}" id= "id"><br>
+	<label for="id">Nombre</label><input type="text" th:field= "*{nombre}" id= "nombre"><br>
+	<label for="id">Calibre</label><input type="text"  th:field= "*{calibre}" id= "calibre"><br>
+	<input type="submit" value="Alta de arma">
+</form>
+<a href="#" th:href="@{/listadoDeArmas}">ListaDeArmas</a>
+</body>
+</html>

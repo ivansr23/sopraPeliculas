@@ -1,0 +1,8 @@
+server:
+  port: 8811
+spring:
+  application:
+    name: mi-config-client
+  cloud:    config:      enabled: true
+      uri:      - http://localhost:8812
+      fail-fast: true
