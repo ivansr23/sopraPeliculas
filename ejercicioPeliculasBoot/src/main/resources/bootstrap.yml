@@ -1,15 +1,17 @@
 server:
-  port: 8822
+  port: 8080
 spring:
   application:
     name: mi-config-peliculas
-  cloud:
-    config:
-      enabled: true
-      uri:
-      - http://localhost:8821
-      fail-fast: true
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysql:3306/mysql
+    username: root
+    password: root
+  jpa:
+    hibernate:
+       ddl-auto: update
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8823/eureka
+      defaultZone: http://eureka:8761/eureka

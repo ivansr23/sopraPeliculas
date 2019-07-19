@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script type="text/javascript" src="js/calculadora.js"></script>
+    </head>
+    <body onload="initialize()">
+        <div >
+            <br>
+            <input id="display" type="text">
+            <br>
+            <button value=1 style="margin:4px;" onclick="escribirEnInput(this)">1</button>
+            <button value=2 style="margin:4px;" onclick="escribirEnInput(this)">2</button>
+            <button value=3 style="margin:4px;" onclick="escribirEnInput(this)">3</button>
+            <button value="+" style="margin:4px;" onclick="escribirOperador(this)">+</button><br>
+            <button value=4 style="margin:4px;" onclick="escribirEnInput(this)">4</button>
+            <button value=5 style="margin:4px;" onclick="escribirEnInput(this)">5</button>
+            <button value=6 style="margin:4px;" onclick="escribirEnInput(this)">6</button>
+            <button value="-" style="margin:4px;" onclick="escribirOperador(this)">-</button><br>
+            <button value=7 style="margin:4px;" onclick="escribirEnInput(this)">7</button>
+            <button value=8 style="margin:4px;" onclick="escribirEnInput(this)">8</button>
+            <button value=9 style="margin:4px;" onclick="escribirEnInput(this)">9</button>
+            <button value="*" style="margin:4px;" onclick="escribirOperador(this)">*</button><br>
+            <button value=0 style="margin:4px;" onclick="escribirEnInput(this)">0</button>
+            <button value="." style="margin:4px;" onclick="escribirEnInput(this)">.</button>
+            <button value="=" style="margin:4px;" onclick="resultado()">=</button>
+            <button value="/" style="margin:4px;" onclick="escribirOperador(this)">/</button><br>
+        </div>
+        
+    </body>
+</html>

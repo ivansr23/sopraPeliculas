@@ -1,0 +1,24 @@
+version: '3.3'
+services: 
+  front:
+    image: peliculasrest:latest
+    ports:
+      - 8080:8080
+    depends_on: 
+      - eureka
+      - back
+  eureka:
+    image:  eurekapeliculas:latest
+    ports:
+      - 8761:8761
+  back:
+    image: peliculajpa:latest
+    depends_on:
+      - mysql
+      - eureka
+    ports:
+      - 8082:8080
+  mysql:
+    image: mysql:8.0.16
+    environment: 
+      - "MYSQL_ROOT_PASSWORD=root"
